@@ -7,6 +7,105 @@
     <title>Document</title>
   </head>
   <body>
+    <form action="#" name="myForm" class="myForm">
+      <h1 class="title">Форма регистрации</h1>
+      <div class="block">
+        <label for="userName">Введите имя:</label>
+        <input
+          type="text"
+          name="userName"
+          id="userName"
+          placeholder="Имя"
+          minlength="2"
+          maxlength="20"
+          required
+        />
+        <span class="error" id="usernameError"></span>
+      </div>
+
+      <div class="block">
+        <label for="email">Введите email:</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email"
+          required
+        />
+        <span class="error" id="emailError"></span>
+      </div>
+
+      <div class="block">
+        <label for="age">Введите возраст:</label>
+        <input
+          type="number"
+          name="age"
+          id="age"
+          placeholder="Ваш возраст"
+          required
+        />
+        <span class="error" id="ageError"></span>
+      </div>
+
+      <div class="gender-selection block">
+        <p>Выберите пол:</p>
+
+        <div class="radio-group">
+          <input type="radio" id="gender-male" name="gender" value="male" />
+          <label for="gender-male">Мужской</label>
+
+          <input type="radio" id="gender-female" name="gender" value="female" />
+          <label for="gender-female">Женский</label>
+        </div>
+      </div>
+
+      <div class="profession-field block">
+        <label for="profession">Профессия:</label>
+        <select
+          name="profession"
+          id="profession"
+          placeholder="Выберите профессию"
+          required
+        >
+          <option value="" disabled selected hidden>Выберите профессию</option>
+          <option value="doctor">Врач</option>
+          <option value="programmer">Программист</option>
+          <option value="teacher">Учитель</option>
+          <option value="designer">Дизайнер</option>
+          <option value="engineer">Инженер</option>
+          <option value="salesman">Продавец</option>
+          <option value="other">Другое</option>
+        </select>
+      </div>
+
+      <div class="block">
+        <label for="profession">Введите пароль</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          minlength="8"
+          placeholder="Пароль"
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$"
+          required
+        />
+        <br />
+        <span class="hint"
+          >Пароль должен содержать минимум 8 символов, одну строчную букву и
+          одну цифру</span
+        >
+      </div>
+
+      <div class="block">
+        <input type="checkbox" name="agreeTerms" id="agreeTerms" required />
+        <label for="agreeTerms" class="agreeTerms"
+          >Я согласен с условиями</label
+        >
+        <span class="error" id="termsError"></span>
+      </div>
+
+      <button type="submit" id="submitBtn" class="submitBtn">Отправить</button>
+    </form>
     <script src="./assets/script.js"></script>
   </body>
 </html>
